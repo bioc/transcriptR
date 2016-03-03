@@ -35,7 +35,6 @@
 #' @author Armen R. Karapetyan
 #'
 #' @import GenomicRanges
-#' @import GenomicRanges
 #' @import IRanges
 #' @import methods
 #' @import grid
@@ -52,6 +51,8 @@
 #' @importFrom Rsamtools scanBamFlag
 #' @importFrom S4Vectors DataFrame
 #' @importFrom S4Vectors runValue
+#' @importFrom S4Vectors queryHits
+#' @importFrom S4Vectors subjectHits
 #' @importFrom caret confusionMatrix
 #' @importFrom caret createDataPartition
 #' @importFrom caret train
