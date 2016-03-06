@@ -32,7 +32,7 @@ plotting.}
 \item{alpha}{Color transparency. In a range [0, 1]. Default: 1.}
 }
 \value{
-\code{\link{ggplot2}} object.
+ggplot2 object.
 }
 \description{
 Visualize the relations between predictors and response variable

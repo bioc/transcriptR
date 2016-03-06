@@ -479,7 +479,7 @@ setGeneric(name = "getProbTreshold",
 #'     by observing the total number of peaks overlapping given genomic feature
 #'     or by looking at the enrichment levels.
 #'
-#' @return \code{\link{ggplot2}} object.
+#' @return ggplot2 object.
 #'
 #' @seealso \code{\link{constructCDS}}
 #'
@@ -534,7 +534,7 @@ setGeneric(name = "plotGenomicAnnot",
 #'    poor predictors can be excluded from the analysis to improve the model
 #'    fit.
 #'
-#' @return \code{\link{ggplot2}} object.
+#' @return ggplot2 object.
 #'
 #' @seealso \code{\link{constructCDS}}
 #'

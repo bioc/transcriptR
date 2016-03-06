@@ -417,7 +417,7 @@ setMethod("predictTssOverlap",
                   message("       Area under the curve (AUC) - ", round(testRocCurve$auc, 4))
 
                   # Apply model to the whole data set
-                  message("[INFO] Classifying peaks: ")
+                  # message("[INFO] Classifying peaks: ")
                   allPred.prob <- stats::predict(logFit, df, type = "prob")
                   allPred <- stats::predict(logFit, df)
                   allConfMat <- caret::confusionMatrix(allPred, df[, 1])
@@ -425,8 +425,8 @@ setMethod("predictTssOverlap",
                                            predictor = allPred.prob$yes,
                                            levels = levels(df[, 1]))
 
-                  message("       Accuracy - ", round(allConfMat$overall[1], 4))
-                  message("       Area under the curve (AUC) - ", round(allRocCurve$auc, 4))
+                  # message("       Accuracy - ", round(allConfMat$overall[1], 4))
+                  # message("       Area under the curve (AUC) - ", round(allRocCurve$auc, 4))
 
                   # Arrange output
                   pred <- data.frame(predicted.tssOverlap.prob = allPred.prob$yes, predicted.tssOverlap = allPred)

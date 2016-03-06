@@ -2,8 +2,8 @@ Package: transcriptR
 Type: Package
 Title: An Integrative Tool for ChIP- And RNA-Seq Based Primary
         Transcripts Detection and Quantification
-Version: 0.99.5
-Date: 2016-03-02
+Version: 0.99.6
+Date: 2016-03-06
 Author: Armen R. Karapetyan <armen.karapetyan87@gmail.com>
 Maintainer: Armen R. Karapetyan <armen.karapetyan87@gmail.com>
 Description: The differences in the RNA types being sequenced have an
@@ -30,7 +30,7 @@ Description: The differences in the RNA types being sequenced have an
         transcription start sites within a given sample.
 Imports: BiocGenerics, caret, chipseq, e1071, GenomicAlignments,
         GenomicRanges, GenomicFeatures, GenomeInfoDb, ggplot2,
-        graphics, grDevices, grid, IRanges, pROC, reshape2, Rsamtools,
+        graphics, grDevices, IRanges, pROC, reshape2, Rsamtools,
         rtracklayer, S4Vectors, stats, utils
 Depends: methods, R (>= 3.3)
 License: GPL-3

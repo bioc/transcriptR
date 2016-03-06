@@ -37,7 +37,6 @@
 #' @import GenomicRanges
 #' @import IRanges
 #' @import methods
-#' @import grid
 #' @importFrom BiocGenerics Reduce
 #' @importFrom GenomeInfoDb keepSeqlevels
 #' @importFrom GenomeInfoDb seqlevelsInUse

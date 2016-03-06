@@ -26,7 +26,7 @@ Default: "enrich".}
 distinct genomic features (TSSs, exons, introns, intergenic regions).}
 }
 \value{
-\code{\link{ggplot2}} object.
+ggplot2 object.
 }
 \description{
 Visualize genomic distribution of ChIP-seq peaks.
