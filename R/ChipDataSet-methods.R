@@ -485,7 +485,7 @@ setMethod("addFeature",
 
 
         peak <- cdsObj@peaks[id]
-        frags.per.peak <- subsetByOverlaps(query = tdsObj@fragments, subject = peak)
+        frags.per.peak <- subsetByOverlaps(tdsObj@fragments, peak)
         starts.per.peak <- resize(frags.per.peak, width = 1, fix = "start")
 
         if (strand %in% "+"){

@@ -217,8 +217,7 @@ setMethod("estimateGapDistance",
 
                   # Keep annot. overlapping region
                   if (length(object@region) > 0){
-                          annot <- subsetByOverlaps(query = annot,
-                                                    subject = object@region,
+                          annot <- subsetByOverlaps(annot, object@region,
                                                     ignore.strand = TRUE)
                   }
 
