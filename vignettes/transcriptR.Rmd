@@ -99,8 +99,9 @@ the coverage profiles, identified transcripts and peaks predictions in the
 The `r Biocpkg("transcriptR")` package is available in the `Bioconductor` and can 
 be downloaded as follows:
 ```{r eval = FALSE}
-source("http://bioconductor.org/biocLite.R")
-biocLite("transcriptR")
+if (!requireNamespace("BiocManager", quietly=TRUE))
+    install.packages("BiocManager")
+BiocManager::install("transcriptR")
 ```
 
 ```{r eval = TRUE, echo = FALSE, message = FALSE}
