@@ -2,7 +2,7 @@ Package: transcriptR
 Type: Package
 Title: An Integrative Tool for ChIP- And RNA-Seq Based Primary
         Transcripts Detection and Quantification
-Version: 1.11.0
+Version: 1.11.1
 Date: 2017-10-10
 Author: Armen R. Karapetyan <armen.karapetyan87@gmail.com>
 Maintainer: Armen R. Karapetyan <armen.karapetyan87@gmail.com>
@@ -41,6 +41,6 @@ Collate: 'utils.R' 'TranscriptionDataSet-class.R' 'ChipDataSet-class.R'
 Suggests: BiocStyle, knitr, rmarkdown,
         TxDb.Hsapiens.UCSC.hg19.knownGene, testthat
 VignetteBuilder: knitr
-biocViews: Transcription, Software, Sequencing, RNASeq, Coverage
+biocViews: ImmunoOncology, Transcription, Software, Sequencing, RNASeq, Coverage
 RoxygenNote: 5.0.1
 NeedsCompilation: no
