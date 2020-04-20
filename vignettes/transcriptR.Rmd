@@ -1,10 +1,6 @@
 ---
 title: "transcriptR: an integrative tool for ChIP- and RNA-seq based primary transcripts detection and quantification"
-author: "
-Armen R. Karapetyan, Renske A. Kuiper, Marcel W. Coolen \\ 
-
-Department of Human Genetics, Radboud University Medical Center, The Netherlands \\ 
-"
+author: "Armen R. Karapetyan, Renske A. Kuiper, Marcel W. Coolen. Department of Human Genetics, Radboud University Medical Center, The Netherlands"
 date: "`r Sys.Date()`"
 bibliography: transcriptR.bib
 output:
