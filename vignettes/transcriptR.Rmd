@@ -4,11 +4,12 @@ author: "Armen R. Karapetyan, Renske A. Kuiper, Marcel W. Coolen. Department of 
 date: "`r Sys.Date()`"
 bibliography: transcriptR.bib
 output:
-   BiocStyle::pdf_document:
+   BiocStyle::html_document:
     toc: true
     toc_depth: 2
     fig_caption: true
     number_sections: true
+    highlight: pygments
 vignette: >
   %\VignetteIndexEntry{transcriptR: an integrative tool for ChIP- and RNA-seq based primary transcripts detection and quantification}
   %\VignetteEngine{knitr::rmarkdown}
