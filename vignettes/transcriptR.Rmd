@@ -85,7 +85,9 @@ detection and quantification can still be performed even in the absence of
 ChIP-seq data, bearing in mind that some adjacent transcripts may be detected as 
 one transcribed unit.
 
-![transcriptR workflow.](./images/Main_scheme.png)
+```{r, fig.cap="transcriptR workflow", fig.align='center', echo=FALSE}
+knitr::include_graphics(path = "./images/Main_scheme.png")
+```
 
 In addition to the features mentioned above `r Biocpkg("transcriptR")` provides
 functions for generating BigWig, BedGraph and BED files for the visualization of 
@@ -245,7 +247,7 @@ are plotted on the x-axis and corresponding error rates on the y-axis. Three
 curved lines depict the two error types calculated by 
 \Rfunction{estimateGapDistance} and the sum of both errors. The vertical dashed 
 line depicts the gap distance with the smallest sum of two errors.
-```{r fig.cap = "Gap distance error rate.", fig.height=5, fig.width=5}
+```{r fig.cap="Gap distance error rate", fig.height=7, fig.width=7, fig.align='center'}
 # get intermediate calculation 
 gdTest <- getTestedGapDistances(tds)
 head(gdTest)
@@ -311,7 +313,9 @@ peaks that overlap transcription start sites of annotated genes. These
 characteristics are used to identify all putatively gene-associated ChIP-seq 
 peaks. A schematic overview of the procedure is shown in Figure 3. 
 
-![Classification of the peaks on gene associated and background.](./images/Gene_associated_peak_prediction.png)
+```{r, fig.cap="Classification of the peaks on gene associated and background", fig.align='center', echo=FALSE}
+knitr::include_graphics(path = "./images/Gene_associated_peak_prediction.png")
+```
 
 Secondly, we incorporate RNA-seq data to find direct evidence of active 
 transcription from every putatively gene-associated peak. In order to do this, 
@@ -328,7 +332,9 @@ RNA-seq data. The following assumptions are made in order to retrieve the peak
   expect to see a strand-specific increase in RNA-seq fragment count downstream
   the transcription initiation site (Figure 4).
 
-![Average RNA-seq signal across ChIP peak region.](./images/Average_RNAseq_signal_across_peak_region.png)
+```{r, fig.cap="Average RNA-seq signal across ChIP peak region", fig.align ='center', echo=FALSE}
+knitr::include_graphics(path = "./images/Average_RNAseq_signal_across_peak_region.png")
+```
 
 Each peak in the data set is tested for association with transcription 
 initiation on both strands of DNA. A detailed overview of the procedure is 
@@ -366,7 +372,9 @@ ChIP peak "strandedness" prediction steps:
    exceeding the estimated threshold are considered to be associated with the 
    transcription initiation event.
 
-![ChIP peak "strandedness" prediction.](./images/Peak_strandedness_prediction.png)
+```{r, fig.cap='ChIP peak "strandedness" prediction', fig.align='center', echo=FALSE}
+knitr::include_graphics(path = "./images/Peak_strandedness_prediction.png")
+```
 
 ## ChipDataSet object construction
 We start ChIP-seq analysis by creating a \Rclass{ChipDataSet} object, which is
@@ -438,11 +446,11 @@ getGenomicAnnot(cds)
 Additionally, the genomic distribution of the peaks can be visualized in two ways, 
 either by observing the total number of peaks overlapping given genomic feature 
 (Figure 6) or by looking at the enrichment levels (Figure 7). 
-```{r, fig.cap = "Genomic distribution of the peaks", fig.height=5, fig.width=5}
+```{r, fig.cap="Genomic distribution of the peaks", fig.height=7, fig.width=7, fig.align='center'}
 plotGenomicAnnot(object = cds, plot.type = "distr")
 ```
 
-```{r, fig.cap = "Enrichment of peaks at distinct genomic features.", fig.height=5, fig.width=5}
+```{r, fig.cap="Enrichment of peaks at distinct genomic features", fig.height=7, fig.width=7, fig.align='center'}
 plotGenomicAnnot(object = cds, plot.type = "enrich")
 ```
 
@@ -473,7 +481,7 @@ response variable (`tssOverlap`) can be explored with \Rfunction{plotFeatures}
 analysis to improve the model fit. In general, the `pileup` (peak height) is a 
 good predictor on its own, as it can segregate gene associated and background peaks
 very well.
-```{r eval = TRUE, fig.cap = "Estimated features", fig.height = 4, fig.width = 8}
+```{r eval=TRUE, fig.cap="Estimated features", fig.height=5, fig.width=10, fig.align='center'}
 plotFeatures(cds, plot.type = "box")
 ```
 
@@ -517,7 +525,7 @@ Additionally, the performance of the model can be visualized by a
 threshold settings. The closer the curve follows the left-hand border and then
 the top border of the ROC space, the more accurate the test. The area under the
 curve (AUC) is a measure of accuracy.
-```{r, fig.cap="Performance of the classification model (gene associated peaks prediction).", eval = TRUE, fig.width = 4.5, fig.height = 4.5}
+```{r, fig.cap="Performance of the classification model (gene associated peaks prediction)", eval=TRUE, fig.width=6, fig.height=6, fig.align='center'}
 plotROC(object = cds, col = "red3", grid = TRUE, auc.polygon = TRUE)
 ```
 
