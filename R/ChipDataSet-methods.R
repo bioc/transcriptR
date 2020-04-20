@@ -816,8 +816,8 @@ setMethod("predictStrand",
                   y <- c(probs.plus$q2.prob[ intersect(idx.plus, pred.no) ],
                          probs.minus$q2.prob[ intersect(idx.minus, pred.no) ])
 
-                  x <- data.frame(prob = x, class = "gene")
-                  y <- data.frame(prob = y, class = "background")
+                  x <- data.frame(prob = x, class = "gene", stringsAsFactors = TRUE)
+                  y <- data.frame(prob = y, class = "background", stringsAsFactors = TRUE)
                   df <- rbind(x, y)
                   df <- df[stats::complete.cases(df), ]
                   prob.cutoff.est <- .estimateProbCutoff(df)
