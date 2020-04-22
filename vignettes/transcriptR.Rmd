@@ -120,16 +120,16 @@ knownGene.genes <- genes(knownGene)
 # Transcripts detection
 
 ## TranscriptionDataSet object construction
-The workflow is initiated by creating a \Rclass{TranscriptionDataSet} object,
+The workflow is initiated by creating a *TranscriptionDataSet* object,
 which is a container for holding processed sequencing data and the results of
-all downstream analyses. A function \Rfunction{constructTDS} initializes the 
-construction of the \Rclass{TranscriptionDataSet} object, by providing the paths
+all downstream analyses. A function `constructTDS` initializes the 
+construction of the *TranscriptionDataSet* object, by providing the paths
 to the input files and information relevant to the library preparation procedure. 
 Optionally, the extracted reads can be limited to a specific genomic region, by 
 using the `region` option. This would decrease the run time for the downstream 
 analyses and might be useful for the testing purposes.
 
-In this tutorial we supply an already constructed \Rclass{TranscriptionDataSet},
+In this tutorial we supply an already constructed *TranscriptionDataSet*,
 containing nuclear RNA-seq data for human chromosome 15, profiled in prostate 
 cancer LNCaP cells.
 ```{r, cache = FALSE}
@@ -152,8 +152,8 @@ tds <- constructTDS(file = path.to.Bam,
                     swap.strand = TRUE)
 ```
 
-Some of the supplied information can already be seen in the constructed
-\Rclass{TranscriptionDataSet} object, whereas other slots are still empty and
+Some of the supplied information can already be seen in the constructed 
+*TranscriptionDataSet* object, whereas other slots are still empty and
 will be filled once the analysis is conducted. 
 
 ## Expression background estimation
@@ -161,11 +161,11 @@ Gene expression is a stochastic process, which often results in substantial
 expression noise. To obtain a putative set of transcribed regions, it is
 necessary to identify those regions that are expressed significantly above the 
 background level. Using a Poisson-based approach for estimating the noise 
-distribution, \Rfunction{estimateBackground} function returns a coverage cutoff 
+distribution, `estimateBackground` function returns a coverage cutoff 
 value for a specific 
 [False Discovery Rate (FDR)](https://en.wikipedia.org/wiki/False_discovery_rate). 
 The estimated value is stored in the `coverageCutoff` slot of the
-\Rclass{TranscriptionDataSet} and will be used in the downstream analysis.
+*TranscriptionDataSet* and will be used in the downstream analysis.
 ```{r}
 estimateBackground(tds, fdr.cutoff = 0.01)
 # view estimated cutoff value
@@ -175,16 +175,15 @@ tds
 
 ## Coverage profile visualization
 RNA-seq coverage profiles for both forward and reverse DNA strand can be 
-visualized separately in the   
-[UCSC genome browser](https://genome.ucsc.edu/) using \Rfunction{exportCoverage}.
-This function can generate tracks in 
+visualized separately in the [UCSC genome browser](https://genome.ucsc.edu/) 
+using `exportCoverage`. This function can generate tracks in 
 [BigWig](http://genome.ucsc.edu/goldenpath/help/bigWig.html) and 
 [bedGraph](http://genome.ucsc.edu/goldenpath/help/bedgraph.html) formats, 
 which can be uploaded to the genome browser as custom tracks. There is an
 option to filter coverage profiles by a coverage cutoff value, either
-estimated for a specific FDR via \Rfunction{estimateBackground} or a user
+estimated for a specific FDR via `estimateBackground` or a user
 specified value. By default, the coverage cutoff value stored in the
-\Rclass{TranscriptionDataSet} object is used. In order to make an informed 
+*TranscriptionDataSet* object is used. In order to make an informed 
 decision about a proper FDR level, it is useful to explore the output at 
 different FDR levels and determine the optimal cutoff value. Additionally, RPM 
 (reads per million mapped reads) normalization is available.
@@ -227,7 +226,7 @@ transcripts, while the 'merged' error will increase as more detected transcripts
 will span multiple annotations. The gap distance with the lowest sum of two 
 error types is chosen as the optimal value.
 
-The function \Rfunction{estimateGapDistance} uses increasing gap distances 
+The function `estimateGapDistance` uses increasing gap distances 
 (based on the supplied vector) and calculates the associated error rates to 
 determine the optimal gap distance. 
 ```{r}
@@ -240,13 +239,13 @@ estimateGapDistance(object = tds, annot = knownGene.genes, filter.annot = TRUE,
 tds
 ```
 
-Additionally, all intermediate calculations can be accessed by
-\Rfunction{getTestedGapDistances} and the output can be presented in a graphical
-way by \Rfunction{plotErrorRate} function call. Here, the tested gap distances 
+Additionally, all intermediate calculations can be accessed by 
+`getTestedGapDistances` and the output can be presented in a graphical
+way by `plotErrorRate` function call. Here, the tested gap distances 
 are plotted on the x-axis and corresponding error rates on the y-axis. Three 
-curved lines depict the two error types calculated by 
-\Rfunction{estimateGapDistance} and the sum of both errors. The vertical dashed 
-line depicts the gap distance with the smallest sum of two errors.
+curved lines depict the two error types calculated by `estimateGapDistance` 
+and the sum of both errors. The vertical dashed line depicts the gap distance 
+with the smallest sum of two errors.
 ```{r fig.cap="Gap distance error rate", fig.height=7, fig.width=7, fig.align='center'}
 # get intermediate calculation 
 gdTest <- getTestedGapDistances(tds)
@@ -257,11 +256,11 @@ plotErrorRate(tds, lwd = 2)
 
 
 ## Transcript calling
-Transcript detection is performed by \Rfunction{detectTranscripts}. This function
+Transcript detection is performed by `detectTranscripts`. This function
 uses the two previously determined parameters to identify transcribed regions: 
-`coverage.cutoff` and `gap.dist` as calculated by the \Rfunction{estimateBackground} 
-and \Rfunction{estimateGapDistance}, respectively and stored in the 
-\Rclass{TranscriptionDataSet} object. Alternatively, the user
+`coverage.cutoff` and `gap.dist` as calculated by the `estimateBackground`
+and `estimateGapDistance`, respectively and stored in the 
+*TranscriptionDataSet* object. Alternatively, the user
 may specify his/her own values to be passed to the function. By increasing the
 `gap.dist`, fewer transcripts of longer size will be identified, and an increase
 in the `coverage.cutoff` will result in fewer transcripts of shorter size.
@@ -277,7 +276,7 @@ proportion of the overlap between transcript and annotation is controlled by the
 annotateTranscripts(object = tds, annot = knownGene.genes, min.overlap = 0.5)
 ```
 
-The detected transcripts can be retrieved by the \Rfunction{getTranscripts}. This
+The detected transcripts can be retrieved by the `getTranscripts`. This
 function uses a number of arguments that control the resulting list of reported
 transcripts. In case, ChIP-seq data is not available, the following method
 will generates the final set of transcripts.
@@ -290,7 +289,7 @@ head(trx, 5)
 ## Detected transcripts visualization
 A convenient graphical way to explore the identified transcripts is to visualize 
 them in the [UCSC genome browser](https://genome.ucsc.edu/). The 
-\Rfunction{transcriptsToBed} function returns a file in 
+`transcriptsToBed` function returns a file in 
 [BED](https://genome.ucsc.edu/FAQ/FAQformat.html#format1) format, which can be 
 directly uploaded to the genome browser. To improve the visual perception, 
 transcripts are color-coded by DNA strand orientation.
@@ -377,14 +376,14 @@ knitr::include_graphics(path = "./images/Peak_strandedness_prediction.png")
 ```
 
 ## ChipDataSet object construction
-We start ChIP-seq analysis by creating a \Rclass{ChipDataSet} object, which is
+We start ChIP-seq analysis by creating a *ChipDataSet* object, which is
 a container for storing ChIP-seq peaks information and all the results that will
-be generated by applying specific functions. The function \Rfunction{constructCDS}
-initializes the \Rclass{ChipDataSet} object, by providing the paths to the input
+be generated by applying specific functions. The function `constructCDS`
+initializes the *ChipDataSet* object, by providing the paths to the input
 files and information relevant to the ChIP-seq library preparation procedure.
 During the object construction the following steps are executed:
 
-* The peak information is converted into the object of \Rclass{GRanges} class.
+* The peak information is converted into the object of *GRanges* class.
 
 * The genomic distribution of the peaks is evaluated (exonic, intronic, intergenic,
   TSSs).
@@ -398,7 +397,7 @@ closely spaced peaks, it is advised to merge these end-to-end peaks to decrease 
 number of false positives and prevent unnecessary truncation of transcripts in the 
 downstream analysis.
 
-In this tutorial we supply an already constructed \Rclass{ChipDataSet}, containing
+In this tutorial we supply an already constructed *ChipDataSet*, containing
 H3K4me3 active histone mark ChIP-seq peaks from the chromosome 15, profiled in
 the prostate cancer LNCaP cells.
 ```{r, cache = FALSE}
@@ -426,8 +425,8 @@ cds <- constructCDS(peaks = path.to.peaks,       # path to a peak file
                     swap.strand = FALSE)
 ```
 
-The peaks stored in \Rclass{ChipDataSet} can be retrieved by a simple
-\Rfunction{getPeaks} function call.
+The peaks stored in *ChipDataSet* can be retrieved by a simple
+`getPeaks` function call.
 ```{r eval = TRUE}
 peaks <- getPeaks(cds)
 head(peaks, 3)
@@ -472,11 +471,10 @@ by several features. Among them:
     TSS region.
 
 Moreover, the user may wish to supply her/his own list of features with the
-\Rfunction{addFeature}. See the manual page for an example of the use of
-\Rfunction{addFeature}.
+`addFeature`. See the manual page for an example of the use of `addFeature`.
 
 Prior to fitting the logistic model, the relations between predictors and 
-response variable (`tssOverlap`) can be explored with \Rfunction{plotFeatures}
+response variable (`tssOverlap`) can be explored with `plotFeatures`
 (Figure 8). Based on the plots, poor predictors can be excluded from the
 analysis to improve the model fit. In general, the `pileup` (peak height) is a 
 good predictor on its own, as it can segregate gene associated and background peaks
@@ -486,7 +484,7 @@ plotFeatures(cds, plot.type = "box")
 ```
 
 The logistic regression model fit is accomplished by
-\Rfunction{predictTssOverlap}. In order to improve the accuracy of the model the 
+`predictTssOverlap`. In order to improve the accuracy of the model the 
 data is internally partitioned into a training and testing data sets. The 
 percent of the data that will be allocated to the training set should be 
 specified by parameter `p`. A repeated 10-Fold Cross-Validation is used to 
@@ -500,7 +498,7 @@ cds
 ```
 
 The result of the logistic regression model fit, can be viewed by
-\Rfunction{getPeaks}. Two new columns have been added to the output:
+`getPeaks`. Two new columns have been added to the output:
 1) `predicted.tssOverlap.prob` - estimated probability of a peak being gene
 associated and 2) `predicted.tssOverlap` - predicted class (binary, yes/no).
 ```{r}
@@ -509,8 +507,8 @@ head(peaks, 3)
 ```
 
 The detailed overview of the classification model fit to the data and the
-significance of each predictor can be accessed by \Rfunction{getConfusionMatrix}
-and \Rfunction{getPredictorSignificance} respectively. Features with a high
+significance of each predictor can be accessed by `getConfusionMatrix`
+and `getPredictorSignificance` respectively. Features with a high
 p-value can be excluded and the analysis should be rerurn with the significant 
 predictors only.
 ```{r eval = TRUE}
@@ -531,8 +529,8 @@ plotROC(object = cds, col = "red3", grid = TRUE, auc.polygon = TRUE)
 
 ## Prediction of the peak strandedness
 The Prediction of the peak "strandedness" is accomplished by
-\Rfunction{predictStrand}. This function requires information stored in both
-\Rclass{ChipDataSet} and \Rclass{TranscriptionDataSet} objects.  
+`predictStrand`. This function requires information stored in both
+*ChipDataSet* and *TranscriptionDataSet* objects.  
 ```{r eval = TRUE}
 predictStrand(cdsObj = cds, tdsObj = tds, quant.cutoff = 0.1, win.size = 2000)
 cds
@@ -543,16 +541,16 @@ head(peaks[ peaks$predicted.tssOverlap == "yes" ], 3)
 The `predicted.strand` can take one of the four possible variants: 1) "+"
 plus strand, 2) "-" minus strand, 3) "bi" bidirectional and 4) "." not 
 associated with a transcription initiation event. All internal calculations 
-performed by \Rfunction{predictStrand} can be viewed by 
-\Rfunction{getQuadProb}. It returns a data frame, where each row corresponds to 
+performed by `predictStrand` can be viewed by 
+`getQuadProb`. It returns a data frame, where each row corresponds to 
 a peak and each column keeps one of the intermediate calculations:
 
 * `max.cov` - maximum coverage of the RNA-seq fragments inside the peak region.
 
 * `pass.cov.treshold` - whether the `max.cov` exceeds the `coverage.cutoff`,
    either user defined or estimated from RNA-seq data by
-   \Rfunction{estimateBackground} function call and stored in
-   \Rclass{TranscriptionDataSet} object.
+   `estimateBackground` function call and stored in
+   *TranscriptionDataSet* object.
    
 * `q1q2.sepline.coord` - genomic coordinate corresponding to the transcription
    start position inside the peak region and which is used to separate q1 and q2.
@@ -575,7 +573,7 @@ head(df, 3)
 ```
 
 The predicted P(q2) threshold, used to select peaks with a putative 
-transcription initiation event, is accessed by \Rfunction{getProbTreshold}.
+transcription initiation event, is accessed by `getProbTreshold`.
 ```{r eval = TRUE}
  getProbTreshold(cds)
 ```
@@ -583,7 +581,7 @@ transcription initiation event, is accessed by \Rfunction{getProbTreshold}.
 ## Peaks visualization
 A convenient way to explore output of the predictions made on the ChIP peaks 
 is to visualize them in the [UCSC genome browser](https://genome.ucsc.edu/). 
-The \Rfunction{peaksToBed} function returns a file in 
+The `peaksToBed` function returns a file in 
 [BED](https://genome.ucsc.edu/FAQ/FAQformat.html#format1) format, which can be 
 uploaded directly to the genome browser. To improve the visual perception, 
 peaks are color-coded by the predicted strand.
@@ -595,9 +593,7 @@ peaksToBed(object = cds, file = "peaks.bed", gene.associated.peaks = TRUE)
 # Transcript boundaries demarcation
 As a last step, both parts of the workflow are combined and, where applicable, 
 closely spaced transcripts are divided into individually transcribed units using
-the detected active transcription start sites. There is a single function       
-\Rfunction{breakTranscriptsByPeaks}, which will generate the final set of 
-transcripts.
+the detected active transcription start sites. There is a single function `breakTranscriptsByPeaks`, which will generate the final set of transcripts.
 ```{r}
 # set `estimate.params = TRUE` to re-calculate FPKM and coverage density
 breakTranscriptsByPeaks(tdsObj = tds, cdsObj = cds, estimate.params = TRUE)
