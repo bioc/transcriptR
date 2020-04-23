@@ -2,8 +2,8 @@ Package: transcriptR
 Type: Package
 Title: An Integrative Tool for ChIP- And RNA-Seq Based Primary
         Transcripts Detection and Quantification
-Version: 1.15.5
-Date: 2017-10-10
+Version: 1.15.6
+Date: 2020-04-23
 Author: Armen R. Karapetyan <armen.karapetyan87@gmail.com>
 Maintainer: Armen R. Karapetyan <armen.karapetyan87@gmail.com>
 Description: The differences in the RNA types being sequenced have an

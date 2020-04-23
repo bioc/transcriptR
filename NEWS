@@ -1,0 +1,26 @@
+CHANGES IN VERSION 1.15.6
+--------------------------
+    o Updated NEWS file to track changes in the package.
+
+CHANGES IN VERSION 1.15.5
+--------------------------
+    o Modified vignette to replace Rclass and Rfunction sweave syntax with
+      markdown syntax.
+
+CHANGES IN VERSION 1.15.4
+--------------------------
+    o Modified vignette to add images via knitr::include_graphics.
+
+CHANGES IN VERSION 1.15.3
+--------------------------
+    o Changed vignette output format to html_document.
+
+CHANGES IN VERSION 1.15.2
+--------------------------
+    o Reformatted author section in the vignette yaml header.
+
+CHANGES IN VERSION 1.15.1
+--------------------------
+    o Fixed bug in the predictStrand function caused by the new behaviour of
+      the data.frame introduced in R 4.0. Have to manually set
+      stringsAsFactors=TRUE.
