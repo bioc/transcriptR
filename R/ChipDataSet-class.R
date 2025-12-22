@@ -76,5 +76,8 @@ ChipDataSet <- setClass(Class = "ChipDataSet",
 #' @name cds
 #' @docType data
 #' @format  \code{\link{ChipDataSet}} object
-#' @return \code{\link{ChipDataSet}} object
+#' @examples
+#' data(cds)
+#' cds
+#'
 "cds"

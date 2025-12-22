@@ -36,10 +36,9 @@ addFeature(object = cds, feature = list(fake = fake.data))
 getPeaks(cds)
 
 }
-\author{
-Armen R. Karapetyan
-}
 \seealso{
 \code{\link{constructCDS}} \code{\link{predictTssOverlap}}
 }
-
+\author{
+Armen R. Karapetyan
+}

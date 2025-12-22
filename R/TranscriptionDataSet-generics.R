@@ -595,7 +595,7 @@ setGeneric(name = "exportCoverage",
 #' @name transcriptsToBed
 #' @docType methods
 #'
-#' @param object A \code{\link{GRanges}} object.
+#' @param object A \code{\link[GenomicRanges:GRanges-class]{GRanges}} object.
 #' @param file \code{Character}. A file name.
 #' @param strand.color A character vector of length two, specifying color for
 #'     each DNA strand. Default: c("blue", "red").

@@ -28,10 +28,9 @@ data(cds)
 getConfusionMatrix(cds)
 
 }
-\author{
-Armen R. Karapetyan
-}
 \seealso{
 \code{\link{predictTssOverlap}} \code{\link[caret]{confusionMatrix}}
 }
-
+\author{
+Armen R. Karapetyan
+}

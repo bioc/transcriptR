@@ -4,16 +4,20 @@
 \name{annot}
 \alias{annot}
 \title{Reference annotation (knownGene from UCSC)}
-\format{\code{\link{GRanges}} object}
+\format{
+\code{\link[GenomicRanges:GRanges-class]{GRanges}} object
+}
 \usage{
 annot
 }
-\value{
-\code{\link{GRanges}} object
-}
 \description{
-\code{annot} is an object of \code{\link{GRanges}} class, containing
-genomic coordinates of the genes located on human chromosome 15 (chr15:63261757-84081194).
+\code{annot} is an object of \code{\link[GenomicRanges:GRanges-class]{GRanges}}
+class, containing genomic coordinates of the genes located on human
+chromosome 15 (chr15:63261757-84081194).
+}
+\examples{
+data(annot)
+annot
+
 }
 \keyword{datasets}
-

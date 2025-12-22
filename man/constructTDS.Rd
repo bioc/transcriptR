@@ -4,8 +4,15 @@
 \alias{constructTDS}
 \title{constructTDS}
 \usage{
-constructTDS(file, region, fragment.size = 250, unique = FALSE,
-  paired.end = FALSE, swap.strand = FALSE, param = NULL)
+constructTDS(
+  file,
+  region,
+  fragment.size = 250,
+  unique = FALSE,
+  paired.end = FALSE,
+  swap.strand = FALSE,
+  param = NULL
+)
 }
 \arguments{
 \item{file}{A path to a BAM file with sequencing reads.}
@@ -60,4 +67,3 @@ tds
 \author{
 Armen R. Karapetyan
 }
-

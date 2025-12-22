@@ -24,7 +24,7 @@ gene associated peaks).
 }
 \details{
 The \code{plotROC} is a simple wrapper for the \code{plot} function
-    implemented in \code{\link{pROC}} package.
+    implemented in \code{\link[pROC:pROC-package]{pROC}} package.
 
     The \href{https://en.wikipedia.org/wiki/Receiver_operating_characteristic}{ROC}
     curve is created by plotting the true positive rate (sensitivity) against
@@ -44,10 +44,9 @@ predictTssOverlap(object = cds, feature = "pileup", p = 0.75)
 plotROC(object = cds, col = "red3", grid = TRUE, auc.polygon = TRUE)
 
 }
-\author{
-Armen R. Karapetyan
-}
 \seealso{
 \code{\link{predictTssOverlap}}
 }
-
+\author{
+Armen R. Karapetyan
+}

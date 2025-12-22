@@ -37,10 +37,9 @@ data(cds)
 getGenomicAnnot(cds)
 
 }
-\author{
-Armen R. Karapetyan
-}
 \seealso{
 \code{\link{constructCDS}}
 }
-
+\author{
+Armen R. Karapetyan
+}

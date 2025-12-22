@@ -6,11 +6,9 @@
 \alias{plotGenomicAnnot,ChipDataSet-method}
 \title{plotGenomicAnnot}
 \usage{
-plotGenomicAnnot(object, plot.type = c("distrib", "enrich"), xlab, ylab,
-  color)
+plotGenomicAnnot(object, plot.type = c("distrib", "enrich"), xlab, ylab, color)
 
-\S4method{plotGenomicAnnot}{ChipDataSet}(object, plot.type = c("distrib",
-  "enrich"), xlab, ylab, color)
+\S4method{plotGenomicAnnot}{ChipDataSet}(object, plot.type = c("distrib", "enrich"), xlab, ylab, color)
 }
 \arguments{
 \item{object}{A \code{\link{ChipDataSet}} object.}
@@ -47,10 +45,9 @@ plotGenomicAnnot(object = cds, plot.type = "distrib")
 plotGenomicAnnot(object = cds, plot.type = "enrich")
 
 }
-\author{
-Armen R. Karapetyan
-}
 \seealso{
 \code{\link{constructCDS}}
 }
-
+\author{
+Armen R. Karapetyan
+}

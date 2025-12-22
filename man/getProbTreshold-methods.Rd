@@ -27,10 +27,9 @@ data(cds)
 getProbTreshold(cds)
 
 }
-\author{
-Armen R. Karapetyan
-}
 \seealso{
 \code{\link{predictStrand}}
 }
-
+\author{
+Armen R. Karapetyan
+}

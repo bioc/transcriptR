@@ -28,7 +28,7 @@ Description: The differences in the RNA types being sequenced have an
         events. Furthermore, the integration of ChIP- and RNA-seq data
         allows the identification all known and novel active
         transcription start sites within a given sample.
-Imports: BiocGenerics, caret, chipseq, e1071, GenomicAlignments,
+Imports: BiocGenerics, caret, chipseq, GenomicAlignments,
         GenomicRanges, GenomicFeatures, GenomeInfoDb, ggplot2,
         graphics, grDevices, IRanges (>= 2.11.15), pROC, reshape2, Rsamtools,
         rtracklayer, S4Vectors, stats, utils
@@ -39,8 +39,10 @@ Collate: 'utils.R' 'TranscriptionDataSet-class.R' 'ChipDataSet-class.R'
         'TranscriptionDataSet-methods.R' 'ChipDataSet-generics.R'
         'ChipDataSet-methods.R'
 Suggests: BiocStyle, knitr, rmarkdown,
-        TxDb.Hsapiens.UCSC.hg19.knownGene, testthat
+        TxDb.Hsapiens.UCSC.hg19.knownGene, testthat, e1071
 VignetteBuilder: knitr
 biocViews: ImmunoOncology, Transcription, Software, Sequencing, RNASeq, Coverage
-RoxygenNote: 5.0.1
+RoxygenNote: 7.3.3
 NeedsCompilation: no
+LazyData: true
+Encoding: UTF-8

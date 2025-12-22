@@ -27,10 +27,9 @@ data(cds)
 getPredictorSignificance(cds)
 
 }
-\author{
-Armen R. Karapetyan
-}
 \seealso{
 \code{\link{predictTssOverlap}}
 }
-
+\author{
+Armen R. Karapetyan
+}

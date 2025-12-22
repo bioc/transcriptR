@@ -586,7 +586,7 @@ setGeneric(name = "plotFeatures",
 #'
 #' @details
 #'     The \code{plotROC} is a simple wrapper for the \code{plot} function
-#'     implemented in \code{\link{pROC}} package.
+#'     implemented in \code{\link[pROC:pROC-package]{pROC}} package.
 #'
 #'     The \href{https://en.wikipedia.org/wiki/Receiver_operating_characteristic}{ROC}
 #'     curve is created by plotting the true positive rate (sensitivity) against
