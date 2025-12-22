@@ -1,3 +1,12 @@
+CHANGES IN VERSION 1.39.4
+--------------------------
+    o Fixed a failing unit test caused by an update to the
+      TxDb.Hsapiens.UCSC.hg19.knownGene library. Replaced the external
+      dependency with the internal annot dataset to ensure stability.
+    o Moved e1071 from Imports to Suggests
+    o Updated the roxygen2 version and rebuilt all manual pages.
+    o Fixed incorrect roxygen documentation for internal datasets.
+
 CHANGES IN VERSION 1.15.6
 --------------------------
     o Updated NEWS file to track changes in the package.
