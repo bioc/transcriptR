@@ -15,7 +15,7 @@ test_that("estimateBackground works", {
 
 test_that("estimateGapDistance works", {
         data(tds)
-        annot <- GenomicFeatures::genes(TxDb.Hsapiens.UCSC.hg19.knownGene::TxDb.Hsapiens.UCSC.hg19.knownGene)
+        data(annot)
         # Check the estimated gap distance
         estimateGapDistance(object = tds, annot = annot, coverage.cutoff = 5.327,
                             filter.annot = FALSE)
@@ -34,7 +34,7 @@ test_that("estimateGapDistance works", {
 
 test_that("detectTranscripts works", {
         data(tds)
-        annot <- GenomicFeatures::genes(TxDb.Hsapiens.UCSC.hg19.knownGene::TxDb.Hsapiens.UCSC.hg19.knownGene)
+        data(annot)
 
         detectTranscripts(object = tds, coverage.cutoff = 5.327, gap.dist = 6900,
                           estimate.params = FALSE)
