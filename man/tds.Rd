@@ -4,17 +4,20 @@
 \name{tds}
 \alias{tds}
 \title{Example of \code{TranscriptionDataSet} object.}
-\format{\code{\link{TranscriptionDataSet}} object}
+\format{
+\code{\link{TranscriptionDataSet}} object
+}
 \usage{
 tds
-}
-\value{
-\code{\link{TranscriptionDataSet}} object
 }
 \description{
 \code{tds} is an object of \code{\link{TranscriptionDataSet}} class, containing
 nuclear RNA-seq data for human chromosome 15 (chr15:63261757-84081194),
 profiled in prostate cancer LNCaP cells.
 }
-\keyword{datasets}
+\examples{
+data(tds)
+tds
 
+}
+\keyword{datasets}

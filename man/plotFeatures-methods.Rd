@@ -6,11 +6,27 @@
 \alias{plotFeatures,ChipDataSet-method}
 \title{plotFeatures}
 \usage{
-plotFeatures(object, plot.type = c("box", "density"), feature, ncol, xlab,
-  ylab, color = c("#E41A1C", "#377EB8"), alpha = 1)
+plotFeatures(
+  object,
+  plot.type = c("box", "density"),
+  feature,
+  ncol,
+  xlab,
+  ylab,
+  color = c("#E41A1C", "#377EB8"),
+  alpha = 1
+)
 
-\S4method{plotFeatures}{ChipDataSet}(object, plot.type = c("box", "density"),
-  feature, ncol, xlab, ylab, color = c("#E41A1C", "#377EB8"), alpha = 1)
+\S4method{plotFeatures}{ChipDataSet}(
+  object,
+  plot.type = c("box", "density"),
+  feature,
+  ncol,
+  xlab,
+  ylab,
+  color = c("#E41A1C", "#377EB8"),
+  alpha = 1
+)
 }
 \arguments{
 \item{object}{A \code{\link{ChipDataSet}} object.}
@@ -66,10 +82,9 @@ plotFeatures(object = cds, plot.type = "box", feature = c("pileup", "length"))
 plotFeatures(object = cds, plot.type = "box", ncol = 2)
 
 }
-\author{
-Armen R. Karapetyan
-}
 \seealso{
 \code{\link{constructCDS}}
 }
-
+\author{
+Armen R. Karapetyan
+}

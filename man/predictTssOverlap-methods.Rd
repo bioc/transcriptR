@@ -53,12 +53,11 @@ cds
 getPeaks(cds)
 
 }
-\author{
-Armen R. Karapetyan
-}
 \seealso{
 \code{\link{ChipDataSet}}
     \code{\link{constructCDS}}
     \href{http://topepo.github.io/caret/index.html}{caret}
 }
-
+\author{
+Armen R. Karapetyan
+}

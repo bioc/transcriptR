@@ -6,11 +6,23 @@
 \alias{predictStrand,ChipDataSet,TranscriptionDataSet-method}
 \title{predictStrand}
 \usage{
-predictStrand(cdsObj, tdsObj, coverage.cutoff, quant.cutoff = 0.1,
-  win.size = 2500, prob.cutoff)
+predictStrand(
+  cdsObj,
+  tdsObj,
+  coverage.cutoff,
+  quant.cutoff = 0.1,
+  win.size = 2500,
+  prob.cutoff
+)
 
-\S4method{predictStrand}{ChipDataSet,TranscriptionDataSet}(cdsObj, tdsObj,
-  coverage.cutoff, quant.cutoff = 0.1, win.size = 2500, prob.cutoff)
+\S4method{predictStrand}{ChipDataSet,TranscriptionDataSet}(
+  cdsObj,
+  tdsObj,
+  coverage.cutoff,
+  quant.cutoff = 0.1,
+  win.size = 2500,
+  prob.cutoff
+)
 }
 \arguments{
 \item{cdsObj}{A \code{\link{ChipDataSet}} object.}
@@ -127,10 +139,9 @@ cds
 getPeaks(cds)
 
 }
-\author{
-Armen R. Karapetyan
-}
 \seealso{
 \code{\link{ChipDataSet}} \code{\link{constructCDS}}
 }
-
+\author{
+Armen R. Karapetyan
+}

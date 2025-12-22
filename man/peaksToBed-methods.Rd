@@ -6,11 +6,19 @@
 \alias{peaksToBed,ChipDataSet-method}
 \title{peaksToBed}
 \usage{
-peaksToBed(object, file, strand.pred.color = c("blue", "red", "green4",
-  "black"), gene.associated.peaks = TRUE)
+peaksToBed(
+  object,
+  file,
+  strand.pred.color = c("blue", "red", "green4", "black"),
+  gene.associated.peaks = TRUE
+)
 
-\S4method{peaksToBed}{ChipDataSet}(object, file, strand.pred.color = c("blue",
-  "red", "green4", "black"), gene.associated.peaks = TRUE)
+\S4method{peaksToBed}{ChipDataSet}(
+  object,
+  file,
+  strand.pred.color = c("blue", "red", "green4", "black"),
+  gene.associated.peaks = TRUE
+)
 }
 \arguments{
 \item{object}{A \code{\link{ChipDataSet}} object.}
@@ -54,9 +62,6 @@ quant.cutoff = 0.1, win.size = 2500)
 # peaksToBed(object = cds, file = "peaks.bed", gene.associated.peaks = TRUE)
 
 }
-\author{
-Armen R. Karapetyan
-}
 \seealso{
 \code{\link{constructCDS}}
     \code{\link{predictTssOverlap}}
@@ -64,4 +69,6 @@ Armen R. Karapetyan
     \href{https://genome.ucsc.edu/}{UCSC genome browser}
     \href{https://genome.ucsc.edu/FAQ/FAQformat.html#format1}{BED}
 }
-
+\author{
+Armen R. Karapetyan
+}

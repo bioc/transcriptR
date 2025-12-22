@@ -75,7 +75,6 @@
 #' @importFrom stats predict
 #' @importFrom utils read.table
 #' @importFrom utils write.table
-#' @import e1071
 #'
 #' @exportClass TranscriptionDataSet
 
@@ -113,7 +112,8 @@ TranscriptionDataSet <- setClass(Class = "TranscriptionDataSet",
 )
 
 
-# documents data sets that come with the package
+
+# Package datasets --------------------------------------------------------
 
 #' Example of \code{TranscriptionDataSet} object.
 #'
@@ -124,16 +124,23 @@ TranscriptionDataSet <- setClass(Class = "TranscriptionDataSet",
 #' @name tds
 #' @docType data
 #' @format \code{\link{TranscriptionDataSet}} object
-#' @return \code{\link{TranscriptionDataSet}} object
+#' @examples
+#' data(tds)
+#' tds
+#'
 "tds"
 
 #' Reference annotation (knownGene from UCSC)
 #'
-#' \code{annot} is an object of \code{\link{GRanges}} class, containing
-#' genomic coordinates of the genes located on human chromosome 15 (chr15:63261757-84081194).
+#' \code{annot} is an object of \code{\link[GenomicRanges:GRanges-class]{GRanges}}
+#' class, containing genomic coordinates of the genes located on human
+#' chromosome 15 (chr15:63261757-84081194).
 #'
 #' @name annot
 #' @docType data
-#' @format \code{\link{GRanges}} object
-#' @return \code{\link{GRanges}} object
+#' @format \code{\link[GenomicRanges:GRanges-class]{GRanges}} object
+#' @examples
+#' data(annot)
+#' annot
+#'
 "annot"

@@ -61,10 +61,9 @@ head(getQuadProb(cds, strand = "+"))
 head(getQuadProb(cds, strand = "-"))
 
 }
-\author{
-Armen R. Karapetyan
-}
 \seealso{
 \code{\link{predictStrand}}
 }
-
+\author{
+Armen R. Karapetyan
+}

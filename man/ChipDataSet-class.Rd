@@ -2,8 +2,8 @@
 % Please edit documentation in R/ChipDataSet-class.R
 \docType{class}
 \name{ChipDataSet-class}
-\alias{ChipDataSet}
 \alias{ChipDataSet-class}
+\alias{ChipDataSet}
 \title{ChipDataSet}
 \description{
 The \code{ChipDataSet} is a S4 class to store input values, intermediate
@@ -47,12 +47,12 @@ following elements are reported:
         strand.
     }}
 }}
-\author{
-Armen R. Karapetyan
-}
+
 \seealso{
 \code{\link{constructCDS}}
     \code{\link{predictTssOverlap}}
     \code{\link{predictStrand}}
 }
-
+\author{
+Armen R. Karapetyan
+}

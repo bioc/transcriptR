@@ -4,9 +4,20 @@
 \alias{constructCDS}
 \title{constructCDS}
 \usage{
-constructCDS(peaks, reads, region, TxDb, tssOf = c("gene", "transcript"),
-  tss.region = c(-2000, 2000), reduce.peaks = FALSE, gapwidth = 1000,
-  fragment.size, unique = TRUE, swap.strand = FALSE, param = NULL)
+constructCDS(
+  peaks,
+  reads,
+  region,
+  TxDb,
+  tssOf = c("gene", "transcript"),
+  tss.region = c(-2000, 2000),
+  reduce.peaks = FALSE,
+  gapwidth = 1000,
+  fragment.size,
+  unique = TRUE,
+  swap.strand = FALSE,
+  param = NULL
+)
 }
 \arguments{
 \item{peaks}{A path to a file with peaks. The file needs to have at least 3
@@ -94,10 +105,9 @@ data(cds)
 cds
 
 }
-\author{
-Armen R. Karapetyan
-}
 \seealso{
 \code{\link{ChipDataSet}} \code{\link{predictTssOverlap}}
 }
-
+\author{
+Armen R. Karapetyan
+}

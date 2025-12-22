@@ -26,12 +26,11 @@ data(cds)
 getPeaks(cds)
 
 }
-\author{
-Armen R. Karapetyan
-}
 \seealso{
 \code{\link{constructCDS}}
     \code{\link{predictTssOverlap}}
     \code{\link{predictStrand}}
 }
-
+\author{
+Armen R. Karapetyan
+}

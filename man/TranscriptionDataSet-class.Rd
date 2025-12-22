@@ -2,8 +2,8 @@
 % Please edit documentation in R/TranscriptionDataSet-class.R
 \docType{class}
 \name{TranscriptionDataSet-class}
-\alias{TranscriptionDataSet}
 \alias{TranscriptionDataSet-class}
+\alias{TranscriptionDataSet}
 \title{TranscriptionDataSet}
 \description{
 The \code{TranscriptionDataSet} is a S4 class to store input values,
@@ -51,10 +51,10 @@ transcripts detection.}
 \item{\code{transcriptsNormalization}}{\code{Numeric}. Total number of reads used for
 normalization when calculating FPKM.}
 }}
-\author{
-Armen R. Karapetyan
-}
+
 \seealso{
 \code{\link{constructTDS}}
 }
-
+\author{
+Armen R. Karapetyan
+}
